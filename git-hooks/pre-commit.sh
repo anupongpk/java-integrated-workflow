@@ -1,0 +1,3 @@
+./gradlew test
+
+./gradlew installGitHooks

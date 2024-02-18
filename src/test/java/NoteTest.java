@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class NoteTest {
 
@@ -27,11 +26,11 @@ class NoteTest {
 	void createReadingNote() {
 		TextFile textFile = mock(TextFile.class);
 		when(textFile.read(any())).thenReturn("Reading book");
-		Note note = new Note(textFile);
+				Note note = new Note(textFile);
 
 		note.write("Reading book");
 
-		String expected = "Reading book";
+			String expected = "Reading book";
 		assertEquals(expected, note.read());
 	}
 
@@ -39,7 +38,7 @@ class NoteTest {
 	@DisplayName("my default note file should be note.txt")
 	void defaultNoteFile() {
 		TextFile textFile = mock(TextFile.class);
-		Note note = new Note(textFile);
+			Note note = new Note(textFile);
 
 		String expected = "note.txt";
 		verify(textFile).create(expected);
@@ -59,9 +58,9 @@ class NoteTest {
 	@DisplayName("write reading note should call write method")
 	void writeNote() {
 		TextFile textFile = mock(TextFile.class);
-		Note note = new Note(textFile);
+			Note note = new Note(textFile);
 
-		note.write("Reading book");
+				note.write("Reading book");
 
 		verify(textFile).write("note.txt", "Reading book");
 	}

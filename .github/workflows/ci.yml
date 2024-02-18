@@ -16,7 +16,7 @@ jobs:
             java-version: '17'
             distribution: 'zulu'
       -   name: Run Linter
-          run: ./gradlew spotlessCheck
+          run: gradle wrapper ./gradlew spotlessCheck
   unit-test:
     name: Run Unit Test
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
             java-version: '17'
             distribution: 'zulu'
       -   name: Run Unit Tests
-          run: ./gradlew test
+          run: gradle wrapper ./gradlew test
   build:
     name: Build Java
     runs-on: ubuntu-latest
@@ -47,4 +47,4 @@ jobs:
             java-version: '17'
             distribution: 'zulu'
       -   name: Build Java
-          run: ./gradlew build
+          run: gradle wrapper ./gradlew build
